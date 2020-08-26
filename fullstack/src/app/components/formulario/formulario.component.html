@@ -1,0 +1,25 @@
+<div class="center">
+    <section id="content">
+        <h1 class="subheader">
+            Formulario
+        </h1>
+        
+        <form class="full-form" #productoform="ngForm" (ngSubmit)="onSubmit()"> 
+            <div class="form-group">
+                <label for="nombre">nombre</label>
+                <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="producto.nombre" required/>
+
+            </div>
+            <div class="form-group">
+                <label for="proovedor">Proovedor</label>
+                <input type="text" name="proovedor" #proovedor="ngModel" [(ngModel)]="producto.proovedor" required />
+            </div>
+            <div class="form-group">
+                <label for="precio">precio</label>
+                <input type="number" name="precio" #precio="ngModel" [(ngModel)]="producto.precio" required />
+            </div>
+            <input type="submit" value="Guardar" class="btn btn-success" [disabled]="productoform.invalid">
+        </form>
+        
+    </section>
+</div>
